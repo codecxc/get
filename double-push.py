@@ -12,7 +12,7 @@ GPIO.output(leds,0)
 buttons=[9,10]
 GPIO.setup(buttons,GPIO.IN)
 num=0
-sleep_time=0.2
+sleep_time=0.2   
 double_pres=0.5
 def check():
     if GPIO.input(buttons[0]):
