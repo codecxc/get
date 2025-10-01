@@ -7,6 +7,7 @@ class PWM_DAC:
         self.dynamic_range=dynamic_range
         self.pwm_frequency=pwm_frequency
         self.pwm=GPIO.PWM(self.gpio_pin,self.pwm_frequency)
+        self.pwm.start(0)
 
     def deinit(self):
         self.pwm.stop()
@@ -15,9 +16,8 @@ class PWM_DAC:
         if not(0.0<=voltage<=self.dynamic_range):
             print(f"Напряжение выходит за динамический диапазон ЦАП (0.0-{self.dynamic_range:.2f} В)")
             print("Устанавливаем 0.0 В")
-            return 0
+            voltage=0.0
         duty=(voltage/self.dynamic_range)*100
-        duty=max(0.0,min(100,duty))
         self.pwm.ChangeDutyCycle(duty)
         print(f"Коэффицент заполнения {duty}")
 if __name__=="__main__":
