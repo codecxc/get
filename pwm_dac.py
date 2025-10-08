@@ -19,7 +19,7 @@ class PWM_DAC:
             voltage=0.0
         duty=(voltage/self.dynamic_range)*100
         self.pwm.ChangeDutyCycle(duty)
-        print(f"Коэффицент заполнения {duty}")
+ #       print(f"Коэффицент заполнения {duty}")
 if __name__=="__main__":
     try:
         dac=PWM_DAC(12,500,3.177)

@@ -13,7 +13,7 @@ class R2R_DAC:
     def set_number(self,number):
         binary=[int(element) for element in bin(number)[2:].zfill(8)]
         GPIO.output(self.gpio_bits,binary)
-        print(f"Число на вход ЦАП: {number}, биты: {binary}")
+        # print(f"Число на вход ЦАП: {number}, биты: {binary}")
     def set_voltage(self,voltage):
         if not(0.0<=voltage<=self.dynamic_range):
             print(f"Напряжение выходит за динамический диапазон ЦАП (0.0-{self.dynamic_range:.2f} В)")
