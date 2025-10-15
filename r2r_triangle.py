@@ -2,7 +2,7 @@ import r2r_dac as r2r
 import signal_generator_triangle as sgt
 import time
 
-amplitude=3.2
+amplitude=5
 signal_frequency=15
 sampling_frequency=1000
 try:

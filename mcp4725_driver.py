@@ -5,7 +5,10 @@ class MCP4725:
         self.bus=smbus.SMBus(1)
         self.address=address
         self.wm=0x00
-        self.pds=0x00
+        self.pds=0x00   
+
+
+        
         self.dynamic_range=dynamic_range
     def deinit(self):
         self.bus.close()

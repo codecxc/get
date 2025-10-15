@@ -14,4 +14,4 @@ try:
         i2c.set_voltage(voltage)
         sgt.wait_for_sampling_period(sampling_frequency)
 except ValueError:
-    print("error")        
+    print("error")
